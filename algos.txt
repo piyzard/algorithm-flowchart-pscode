@@ -1,0 +1,155 @@
+1. Student Grade Calculator
+
+Start
+Input the assignment score, midterm exam score, and final exam score
+Calculate the weighted grades:
+- `weighted_assignment = assignment * 0.30`
+- `weighted_midterm = midterm * 0.30`
+- `weighted_final = final * 0.40`
+Calculate the final grade:
+- `final_grade = weighted_assignment + weighted_midterm + weighted_final`
+If `final_grade >= 60`, then:
+- Display "Student passed. Final grade: [final_grade]"
+Else:
+- Display "Student failed. Final grade: [final_grade]"
+End
+
+
+2. ATM Banking System
+
+Start
+Initialize a variable `balance` with a starting value
+Authenticate the user with a PIN:
+- Input user's PIN
+- Validate PIN
+Display the menu options:
+- 1. Check Balance
+- 2. Deposit Money
+- 3. Withdraw Money
+- 4. Exit
+Loop through the following steps until the user selects "Exit":
+- Input the user's choice
+- If choice = 1:
+  - Display the current balance
+- If choice = 2:
+  - Input the amount to deposit
+  - Add the deposit amount to `balance`
+  - Display the updated balance
+- If choice = 3:
+  - Input the amount to withdraw
+  - Check if `balance` is sufficient:
+    - If yes, deduct the withdrawal amount from `balance` and display the updated balance
+    - If no, display a message: "Insufficient balance."
+- If choice = 4:
+  - Exit the program
+- Else, display: "Invalid choice. Please try again."
+End
+
+
+3. Inventory Management System
+
+Start
+Initialize an empty data structure to store inventory items. Each item should have:
+- ID
+- Name
+- Price
+- Quantity
+Display the menu options:
+- 1. Add New Item
+- 2. Update Item Quantity
+- 3. Remove Item
+- 4. Display Current Inventory
+- 5. Exit
+Loop through the following steps until the user selects "Exit":
+- Input the user's choice
+- If choice = 1:
+  - Input `ID`, `Name`, `Price`, and `Quantity`
+  - Check if `ID` already exists in inventory:
+    - If yes, display a message: "Item with this ID already exists."
+    - If no, add the new item to the inventory
+- If choice = 2:
+  - Input the `ID` of the item to update
+  - Check if the `ID` exists in the inventory:
+    - If yes, input the new quantity and update it
+    - If no, display a message: "Item not found."
+- If choice = 3:
+  - Input the `ID` of the item to remove
+  - Check if the `ID` exists in the inventory:
+    - If yes, remove the item
+    - If no, display a message: "Item not found."
+- If choice = 4:
+  - Loop through all items in the inventory and display their details
+  - Optionally, highlight low-stock items
+- If choice = 5:
+  - Exit the program
+- Else, display: "Invalid choice. Please try again."
+End
+
+
+4. Prime Number Checker
+
+Start
+Input the number to check
+If `num <= 1`, then:
+- Display "Not a prime number."
+- End
+Initialize a variable `is_prime` as `True`
+Loop through numbers `i` from 2 to the square root of `num`:
+- If `num % i == 0`, then:
+  - Set `is_prime = False`
+  - Break the loop
+If `is_prime = True`, then:
+- Display "The number is prime."
+Else:
+- Display "The number is not prime."
+End
+
+
+5. Temperature Conversion Tool
+
+Start
+Input the temperature value to convert
+Input the source unit
+Input the target unit
+Use the appropriate formula for conversion based on the source and target units:
+- From Celsius:
+  - To Fahrenheit: F = C * 9/5 + 32
+  - To Kelvin: K = C + 273.15
+- From Fahrenheit:
+  - To Celsius: C = (F - 32) * 5/9
+  - To Kelvin: K = (F - 32) * 5/9 + 273.15
+- From Kelvin:
+  - To Celsius: C = K - 273.15
+  - To Fahrenheit: F = (K - 273.15) * 9/5 + 32
+Calculate the converted temperature using the selected formula
+Display the result along with the target unit
+Ask the user if they want to perform another conversion:
+- If yes, repeat steps 2–7
+- If no, proceed to step 9
+End
+
+
+7. Fibonacci Sequence Generator
+
+Start
+Input the number of terms to generate
+If `n <= 0`:
+- Display "Please enter a positive integer."
+- End
+Initialize two variables: 
+- `a = 0`
+- `b = 1`
+If `n = 1`:
+- Display `a`
+- End
+Display the first two terms: `a` and `b`
+For each term from 3 to `n`:
+- Calculate the next term as `c = a + b`
+- Display `c`
+- Update `a = b` and `b = c`
+End
+
+
+
+
+
