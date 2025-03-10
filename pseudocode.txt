@@ -1,0 +1,187 @@
+1.Student Grade Calculator
+
+START
+DISPLAY "enter assignment score(out of 100):"
+INPUT assignmentscore
+ 
+DISPLAY "enter assignment exam score(out of 100)"
+INPUT midtermscore
+ 
+DISPLAY "enter final exam score(out of 100)"
+INPUT finalscore
+
+SET finalgrade=(assignmentscore*0.30)+(midtermscore*0.30)+(finalexamscore*0.40)
+IF finalgrade>=60 THEN
+ SET status="pass"
+ELSE
+ SET status="fail"
+ENDIF
+
+ DISPLAY"final grade:",finalgrade
+ DISPLAY"STATUS:",status
+END
+
+2.ATM BANKING SYSTEM
+
+START 
+DISPLAY"enter your pin:"
+INPUT userpin
+IF userpin is incorrect THEN 
+DISPLAY "invalid pin try again."
+EXIT
+ENDIF
+SET balance=1000
+REPEAT
+DISPLAY"ATM menu:"
+DISPLAY"1.check balance"
+DISPLAY"2.deposit money"
+DISPLAY"3.withdraw money"
+DISPLAY"4.exit"
+DISPLAY"choose an option:"
+INPUT choice
+
+IF choice=1 THEN
+DISPLAY "your balance is",balance
+ELSE IF choice=2 THEN
+DISPLAY"enter amount to deposit:"
+INPUT depositAmount
+  SET balance = balance + depositAmount
+  DISPLAY "Deposit successful. New balance: ", balance
+  ELSE IF choice = 3 THEN
+  DISPLAY "Enter amount to withdraw:"
+  INPUT withdrawAmount
+  IF withdrawAmount > balance THEN
+  DISPLAY "Insufficient funds!"
+ELSE
+ SET balance = balance - withdrawAmount
+DISPLAY "Withdrawal successful. New balance: ", balance
+ENDIF
+ELSE IF choice = 4 THEN
+DISPLAY "Thank you for using our ATM."
+EXIT
+ELSE
+DISPLAY "Invalid choice. Please try again."
+ ENDIF
+    UNTIL choice = 4
+END
+
+
+4. Prime Number Checker
+
+START
+
+FUNCTION isPrime(number)
+    IF number <= 1 THEN
+        RETURN false
+    IF number is 2 THEN
+        RETURN true
+    FOR i FROM 2 TO square root of number DO
+        IF number MOD i == 0 THEN
+            RETURN false
+    RETURN true
+
+LOOP
+    DISPLAY "Enter a positive integer: "
+    INPUT number
+
+    IF number is not a positive integer THEN
+        DISPLAY "Invalid input. Please enter a positive integer."
+        CONTINUE
+
+    IF isPrime(number) THEN
+        DISPLAY number, "is a prime number."
+    ELSE
+        DISPLAY number, "is not a prime number."
+
+    DISPLAY "Do you want to check another number? (yes/no)"
+    INPUT choice
+    IF choice is "no" THEN
+        EXIT LOOP
+
+END
+
+
+5. Temperature Conversion Tool
+
+START
+
+FUNCTION convertTemperature(value, sourceUnit, targetUnit)
+    IF sourceUnit == "C" AND targetUnit == "F" THEN
+        RETURN (value * 9/5) + 32
+    ELSE IF sourceUnit == "C" AND targetUnit == "K" THEN
+        RETURN value + 273.15
+    ELSE IF sourceUnit == "F" AND targetUnit == "C" THEN
+        RETURN (value - 32) * 5/9
+    ELSE IF sourceUnit == "F" AND targetUnit == "K" THEN
+        RETURN (value - 32) * 5/9 + 273.15
+    ELSE IF sourceUnit == "K" AND targetUnit == "C" THEN
+        RETURN value - 273.15
+    ELSE IF sourceUnit == "K" AND targetUnit == "F" THEN
+        RETURN (value - 273.15) * 9/5 + 32
+    ELSE
+        RETURN value  // No conversion needed if units are the same
+
+LOOP
+    DISPLAY "Enter temperature value: "
+    INPUT value
+
+    DISPLAY "Enter source unit (C, F, K): "
+    INPUT sourceUnit
+
+    DISPLAY "Enter target unit (C, F, K): "
+    INPUT targetUnit
+
+    convertedValue = convertTemperature(value, sourceUnit, targetUnit)
+    DISPLAY "Converted Temperature: ", convertedValue, targetUnit
+
+    DISPLAY "Do you want to convert another temperature? (yes/no)"
+    INPUT choice
+    IF choice == "no" THEN
+        EXIT LOOP
+
+END
+
+
+7. Fibonacci Sequence Generator
+
+START
+
+FUNCTION generate_fibonacci(n):
+    IF n <= 0 THEN
+        DISPLAY "Enter a positive integer"
+        RETURN
+    ELSE IF n == 1 THEN
+        RETURN [0]
+    ELSE IF n == 2 THEN
+        RETURN [0, 1]
+
+    INITIALIZE sequence = [0, 1]
+    FOR i FROM 2 TO n-1:
+        NEXT_TERM = sequence[i-1] + sequence[i-2]
+        APPEND NEXT_TERM to sequence
+
+    RETURN sequence
+
+FUNCTION save_to_file(sequence):
+    OPEN "fibonacci.txt" in write mode
+    WRITE sequence to file
+    CLOSE file
+
+LOOP
+    DISPLAY "Enter the number of Fibonacci terms to generate:"
+    INPUT n
+    VALIDATE n is a positive integer
+    CALL generate_fibonacci(n) → result
+    DISPLAY result
+
+    DISPLAY "Do you want to save the sequence to a file? (yes/no)"
+    INPUT choice
+    IF choice == "yes" THEN
+        CALL save_to_file(result)
+        DISPLAY "Sequence saved successfully"
+
+    DISPLAY "Do you want to generate another sequence? (yes/no)"
+    INPUT repeat
+    IF repeat == "no" THEN EXIT LOOP
+
+END
